@@ -1,0 +1,68 @@
+.container{
+    width: 900px;
+    background-color: rgb(228, 228, 228);
+    padding-bottom: 20px;
+}
+
+#headerrow{
+    height: 100px;
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 10px;
+}
+
+#h2row{
+    height: 60px;
+    border-bottom: solid;
+    border-color: #777777;
+    padding-top: 5px;
+    color: #777777;
+    background-color: white;
+}
+
+#prow{
+    text-align: center;
+    height: 200px;
+    padding-top: 15px;
+    border-bottom: solid;
+    border-color: #777777;
+    background-color: white;
+}
+
+p{
+    height: 80%;
+    width: 90%;
+    align-content: center;
+    border: dashed;
+    border-color: #777777;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+}
+
+#buttonrow1{
+    font-size: 24;
+}
+
+#buttonrow2{
+    font-size: 24;
+}
+
+#buttoncol1{
+    text-align: center;
+    padding-top: 10px;
+    background-color: white;
+}
+
+#buttoncol2{
+    text-align: center;
+    padding-top: 10px;
+    background-color: white;
+}
+
+.passwordbox{
+    padding: 40px 20px 40px 20px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px #777777;
+}
