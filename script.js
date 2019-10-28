@@ -1,19 +1,22 @@
-var specialCharacters = ["!", "#", "$", "%", "*", "?", "@", "^", "_", "~"];
+var specialCharacters = ["!#$%*?@^_~"];
 
-var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numericCharacters = ["0123456789"];
 
-var lowercaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var lowercaseCharacters = ["abcdefghijklmnopqrstuvwxyz"];
 
-var uppercaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var uppercaseCharacters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 
+var finalanswer = "";
 
-function generatepassword() {
+var passwordcreator= "";
+
+function generatePassword() {
 
     var passwordLength = prompt("Please choose a password length between 8 and 128 characters.");
 
     if (passwordLength < 8 || passwordLength > 128){
         alert("Your password needs to be between 8 and 128 characters.");
-        return generatepassword();
+        return generatePassword();
     }
 
     var passwordSpecial = confirm("Is it okay to have special characters in your password?");
@@ -22,7 +25,57 @@ function generatepassword() {
 
     var passwordLowercase = confirm("Is it okay to have lowercases letters in your password?");
 
-    var passwordUpperase = confirm("Is it okay to have uppercase letters in your password?");
+    var passwordUppercase = confirm("Is it okay to have uppercase letters in your password?");
+
+
+    for (i = 0; i < passwordLength; i++) {
+
+
+        if (passwordSpecial === true) {
+            passwordcreator += passwordcreator + specialCharacters
+        }
+        else{}
+
+        if (passwordNumeric === true) {
+            passwordcreator += passwordcreator + numericCharacters
+        }
+        else{}
+
+        if (passwordLowercase === true) {
+            passwordcreator += passwordcreator + lowercaseCharacters
+        }
+        else{}
+
+        if (passwordUppercase = true) {
+            passwordcreator += passwordcreator + uppercaseCharacters
+        }
+        else{}
+
+        for ( i = 0; i < passwordLength; i++) {
+            finalanswer = finalanswer + passwordcreator.charAt(Math.floor(Math.random() * passwordcreator.length));
+        }
+
+        document.getElementById("pcol").innerText = finalanswer;
+
+    }
+
 
 }
 
+function copyToClipboard() {
+
+    var input = document.createElement('input');
+
+    input.style.opacity = 0;
+
+    document.body.appendChild(input);
+
+    input.value =  document.getElementById("pcol").innerText;
+
+    input.select();
+  
+    document.execCommand("copy");
+    
+    input.remove();
+
+}
